@@ -1,6 +1,7 @@
 package com.gestore.eventi;
 
 import java.time.LocalDate;
+
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -24,6 +25,10 @@ public class Main {
 
             // Crea un nuovo evento
             Evento evento = new Evento(titolo, data, numeroPostiTotali);
+            
+            // Stampa Evento
+            System.out.println("Evento:");
+            System.out.println(evento.toString());
 
             // Chiedi all'utente di effettuare prenotazioni
             System.out.println("Vuoi effettuare delle prenotazioni? (Sì/No)");
@@ -64,10 +69,13 @@ public class Main {
             // Stampa nuovamente il numero di posti prenotati e disponibili
             System.out.println("Numero di posti prenotati: " + evento.getNumeroPostiPrenotati());
             System.out.println("Numero di posti disponibili: " + (evento.getNumeroPostiTotali() - evento.getNumeroPostiPrenotati()));
+            
+            
         } catch (Exception e) {
             System.out.println("Si è verificato un errore: " + e.getMessage());
         } finally {
             scanner.close();
         }
+        
 	}
 }
